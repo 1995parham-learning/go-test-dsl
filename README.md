@@ -2,10 +2,12 @@
 
 ## Introduction
 
-We are going to create a domain specific language for making assertions about arrays, numbers, etc. in Go
-e.g. we want to check if a specific element in an array is equal to some specific value.
-The following code should return `true` because the element at index 1 is equal to 33:
+We're building a domain-specific language (DSL) in Go to simplify assertions for data structures like arrays and numbers. The goal is to create a more expressive and readable way to write tests.
+For instance, to verify that a specific element in an array holds a particular value, you could write an assertion like this:
 
 ```go
-result := forList( []int{22, 33, 44} ).elemAt(1).shouldBe(equalTo(33))
+// This assertion checks if the element at index 1 equals 33.
+Expect(myArray).To(HaveElementAtIndex(1, 33))
 ```
+
+This approach makes the test's intent clear and easy to understand at a glance. In the example [11, 33, 44], the expression would evaluate to true.
